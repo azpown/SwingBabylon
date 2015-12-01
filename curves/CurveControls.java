@@ -25,7 +25,8 @@ class CurveControls extends JPanel {
 		JPanel precision = new JPanel();
 		JLabel title = new JLabel("Précision");
 		cb = new JComboBox<Integer>(nStepsChoices);
-
+		
+System.out.println("Faya burn Babyloooooon !!!");
 		precision.add(title);
 		precision.add(cb);
 		add(precision);
