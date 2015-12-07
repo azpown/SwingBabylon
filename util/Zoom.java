@@ -65,4 +65,9 @@ public class Zoom extends Observable {
 		return zoom;
 	}
 	
+	public void setNewBornes(double xmin, double xmax){
+		bornes[0]=xmin;
+		bornes[1]=xmax;
+	}
+	
 }

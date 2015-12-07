@@ -31,9 +31,14 @@ class CurveControls extends JPanel implements Observer{
 	protected final static Integer nStepsChoices[] = { 1, 2, 3, 4, 5, 10, 20, 40, 80, 160, 320, 640 };
 
 	private JComboBox<Integer> cb;
+	
+	private CurveFrame my_f;
+	private FunctionVariations my_var;
 
 	CurveControls(final FunctionVariations var, final CurveFrame f) {
 		super();
+		my_f = f;
+		my_var = var;
 		curveZoom = new Zoom(var.getXmin(),var.getXmax());
 		curveZoom.addObserver(this);
 		add(curveZoom.getPanel());
@@ -45,7 +50,8 @@ class CurveControls extends JPanel implements Observer{
 		precision.add(title);
 		precision.add(cb);
 		add(precision);
-
+		
+		//Listener du widget de Précision [CP]
 		cb.addItemListener((ItemListener) (new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange() == ItemEvent.SELECTED) {
@@ -70,13 +76,14 @@ class CurveControls extends JPanel implements Observer{
 			JOptionPane.showMessageDialog(my_f, "xmin doit être inférieur à xmax", "Erreur de saisie.",
 					JOptionPane.WARNING_MESSAGE);
 			// xMinJText.setForeground(Color.RED);
+			curveZoom.setNewBornes(my_var.getXmin(),my_var.getXmax());
 		}
 
 		else {
-			var.changeInterval(bornes[0], bornes[1]);
-			var.tabulate(CurveControls.this.currentPrecision());
-			f.infos.update();
-			f.repaint();
+			my_var.changeInterval(bornes[0], bornes[1]);
+			my_var.tabulate(CurveControls.this.currentPrecision());
+			my_f.infos.update();
+			my_f.repaint();
 			
 		}
 	}
