@@ -47,4 +47,5 @@ public interface FunctionVariations {
 	/** computes the array of the variations of fun */
 	public void tabulate(int nbStep);
 
+	public void changeInterval(double newXMin, double newXMax);
 }

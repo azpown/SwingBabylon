@@ -79,7 +79,7 @@ public class CurveFrame extends JFrame {
 			}
 		});
 
-		fvar.tabulate(controls.currentPrecision());
+		fvar.tabulate(controls.currentPrecision()); // MAJ précisions
 		setContentPane(mainPane);
 		pack();
 		infos.update();

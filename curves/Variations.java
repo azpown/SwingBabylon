@@ -87,6 +87,13 @@ public abstract class Variations implements FunctionVariations {
 			else if (val > ymax)
 				ymax = val;
 		}
+		
+		System.out.println("FAYA BURN BABYLOOOON");
+	}
+	
+	public final void changeInterval(double newXMin, double newXMax){
+		this.xmax = newXMax;
+		this.xmin = newXMin;
 	}
 
 }
