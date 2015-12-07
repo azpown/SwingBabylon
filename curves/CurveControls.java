@@ -31,12 +31,9 @@ class CurveControls extends JPanel implements Observer{
 	protected final static Integer nStepsChoices[] = { 1, 2, 3, 4, 5, 10, 20, 40, 80, 160, 320, 640 };
 
 	private JComboBox<Integer> cb;
-	
-	private CurveFrame my_f;
 
 	CurveControls(final FunctionVariations var, final CurveFrame f) {
 		super();
-		my_f = f;
 		curveZoom = new Zoom(var.getXmin(),var.getXmax());
 		curveZoom.addObserver(this);
 		add(curveZoom.getPanel());
