@@ -1,5 +1,6 @@
 package curves;
 
+import java.awt.GridLayout;
 import java.awt.event.ItemEvent;
 import util.*;
 import java.awt.event.ItemListener;
@@ -18,10 +19,6 @@ import javax.swing.JTextField;
 
 import com.sun.prism.paint.Color;
 
-/**
- * @author casteran
- */
-
 class CurveControls extends JPanel implements Observer{
 
 	private static final long serialVersionUID = 1L;
@@ -37,6 +34,7 @@ class CurveControls extends JPanel implements Observer{
 
 	CurveControls(final FunctionVariations var, final CurveFrame f) {
 		super();
+		
 		my_f = f;
 		my_var = var;
 		curveZoom = new Zoom(var.getXmin(),var.getXmax());
@@ -75,7 +73,6 @@ class CurveControls extends JPanel implements Observer{
 		if (bornes[0] > bornes[1]) {
 			JOptionPane.showMessageDialog(my_f, "xmin doit être inférieur à xmax", "Erreur de saisie.",
 					JOptionPane.WARNING_MESSAGE);
-			// xMinJText.setForeground(Color.RED);
 			curveZoom.setNewBornes(my_var.getXmin(),my_var.getXmax());
 		}
 

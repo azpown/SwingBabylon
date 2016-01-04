@@ -8,6 +8,8 @@ import java.awt.event.MouseMotionAdapter;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import util.FramesController;
+
 /**
  * A class  to represent the variations of some function  in some interval.
  * Allows some control on the accuracy of this representation
@@ -16,7 +18,7 @@ import javax.swing.JPanel;
 /**
  * @author casteran
  */
-public class CurveFrame extends JFrame {
+public class CurveFrame extends MenuFrame {
 	/**
 	 * 
 	 */
@@ -36,8 +38,8 @@ public class CurveFrame extends JFrame {
 	 * 
 	 * @see FunctionVariations
 	 */
-	public CurveFrame(FunctionVariations fvar) {
-		super("Curve");
+	public CurveFrame(FunctionVariations fvar, FramesController controller) {
+		super(controller);
 		tracer = new CurveTracer(fvar);
 		infos = new CurveInfos(fvar);
 		controls = new CurveControls(fvar, this);

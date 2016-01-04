@@ -19,7 +19,6 @@ class CurveTracer extends JComponent {
 	private static final long serialVersionUID = 1L;
 
 	FunctionVariations fvar;
-
 	/**
 	 * part of the height of the canvas devoted to the drawing of the curve
 	 */

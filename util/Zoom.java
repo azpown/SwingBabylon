@@ -1,5 +1,6 @@
 package util;
 
+import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Observable;
@@ -36,7 +37,6 @@ public class Zoom extends Observable {
 		}
 		
 		zoom = new JPanel();
-		
 		xMinJText = new JTextField(Double.toString(bornes[0]),5);
 		xMaxJText = new JTextField(Double.toString(bornes[1]),5);
 		xMaxJLabel = new JLabel("x max");
