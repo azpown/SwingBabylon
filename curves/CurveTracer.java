@@ -5,13 +5,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 
 import javax.swing.JComponent;
-import javax.swing.border.EmptyBorder;
 
-/**
- * 
- * @author casteran
- * 
- */
+
 
 class CurveTracer extends JComponent {
 	/**

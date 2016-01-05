@@ -2,15 +2,12 @@ package util;
 
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Observable;
-
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -49,14 +46,14 @@ public class FunChooser extends Observable{
 			    if(returnVal == JFileChooser.APPROVE_OPTION)
 			    {
 			      try{
-			    	fileContent = readFile(chooser.getSelectedFile().getName());
-			    	System.out.println(fileContent);
+			    	fileContent = readFile(chooser.getSelectedFile().getAbsolutePath());
 			      } catch (IOException IOE){
-			    	  System.err.println("Caught IOException: "
+			    	  System.err.println("Caught IOExce ption: "
 	                           +  IOE.getMessage());
 			      } finally {
 			          if (fileContent != null) {
 							setChanged();
+							fcName.setText(chooser.getSelectedFile().getName());
 							//notifyObservers(fileContent);
 			          } 
 			          else {
