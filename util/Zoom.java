@@ -1,13 +1,11 @@
 package util;
 
-import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Observable;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -41,7 +39,7 @@ public class Zoom extends Observable {
 		xMaxJText = new JTextField(Double.toString(bornes[1]),5);
 		xMaxJLabel = new JLabel("x max");
 		xMinJLabel = new JLabel("x min");
-		intervalButton = new JButton("Valider");
+		intervalButton = new JButton("Validate");
 
 		zoom.add(xMinJLabel);
 		zoom.add(xMinJText);
@@ -50,7 +48,6 @@ public class Zoom extends Observable {
 		zoom.add(intervalButton);
 		
 		intervalButton.addMouseListener(new MouseAdapter() {
-
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				bornes[0] = Double.parseDouble(xMinJText.getText());

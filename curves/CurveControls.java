@@ -1,29 +1,23 @@
 package curves;
 
-import java.awt.GridLayout;
 import java.awt.event.ItemEvent;
 import util.*;
 import java.awt.event.ItemListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-
-import com.sun.prism.paint.Color;
 
 class CurveControls extends JPanel implements Observer{
 
 	private static final long serialVersionUID = 1L;
 	
 	private Zoom curveZoom;
+	
+	private FunChooser curveChooser;
 	
 	protected final static Integer nStepsChoices[] = { 1, 2, 3, 4, 5, 10, 20, 40, 80, 160, 320, 640 };
 
@@ -40,6 +34,10 @@ class CurveControls extends JPanel implements Observer{
 		curveZoom = new Zoom(var.getXmin(),var.getXmax());
 		curveZoom.addObserver(this);
 		add(curveZoom.getPanel());
+		
+		curveChooser = new FunChooser();
+		curveChooser.addObserver(this);
+		add(curveChooser.getPanel());
 		
 		JPanel precision = new JPanel();
 		JLabel title = new JLabel("Précision");
