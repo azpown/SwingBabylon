@@ -44,7 +44,7 @@ public class CurveFrame extends MenuFrame {
 		infos = new CurveInfos(fvar);
 		controls = new CurveControls(fvar, this);
 
-		JPanel mainPane = new JPanel(new BorderLayout());
+		JPanel mainPane = new JPanel(new BorderLayout(15,15));
 		mainPane.setBorder(new EmptyBorder(15,15, 15, 15) );
 		mainPane.setBackground(Color.decode("#2c3e50"));
 		mainPane.add(tracer, BorderLayout.CENTER);
