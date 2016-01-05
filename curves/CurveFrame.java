@@ -1,10 +1,12 @@
 package curves;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 import util.FramesController;
 
@@ -43,7 +45,8 @@ public class CurveFrame extends MenuFrame {
 		controls = new CurveControls(fvar, this);
 
 		JPanel mainPane = new JPanel(new BorderLayout());
-
+		mainPane.setBorder(new EmptyBorder(15,15, 15, 15) );
+		mainPane.setBackground(Color.decode("#2c3e50"));
 		mainPane.add(tracer, BorderLayout.CENTER);
 		mainPane.add(infos, BorderLayout.SOUTH);
 		mainPane.add(controls, BorderLayout.EAST);

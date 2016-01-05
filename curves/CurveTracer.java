@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 
 import javax.swing.JComponent;
+import javax.swing.border.EmptyBorder;
 
 /**
  * 
@@ -29,8 +30,8 @@ class CurveTracer extends JComponent {
 		this.fvar = var;
 		setPreferredSize(new Dimension(400, 300));
 		setOpaque(true);
-		setBackground(Color.green);
-		setForeground(Color.red);
+		setBackground(Color.decode("#1abc9c"));
+		setForeground(Color.decode("#ecf0f1"));
 	}
 
 	/**

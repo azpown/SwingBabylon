@@ -45,7 +45,7 @@ class CurveInfos extends JPanel {
 		add(new JLabel());
 		add(xmouse);
 		add(ymouse);
-		setBackground(Color.orange);
+		setBackground(Color.decode("#f39c12"));
 	}
 
 	void update() {

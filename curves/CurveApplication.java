@@ -16,7 +16,7 @@ public class CurveApplication implements FramesController{
 	private CurveApplication() {
 	}
 	
-	public final static String MENU_FILE = "File";
+	public final static String MENU_FILE = "Application";
 	public final static String MENU_ITEM_NEW = "New";
 	public final static String MENU_ITEM_CLOSE = "Close";
 	public final static String MENU_ITEM_QUIT = "Quit";

@@ -3,20 +3,14 @@ package curves;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 import util.FramesController;
 
 public class MenuFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	public static final String LINK_OPEN_STRING = "Open ";
-	public static final String LINK_DEFAULT_STRING = " ";
-
-	public static final String FAILURE_URL = "file:Failure.html";
 
 	private JEditorPane pane;
-	private JLabel label;
 
 	private FramesController controller;
 
@@ -27,19 +21,6 @@ public class MenuFrame extends JFrame {
 		pane = new JEditorPane();
 		pane.setEditable(false);
 		JScrollPane scrollPane = new JScrollPane(pane);
-
-		label = new JLabel(LINK_DEFAULT_STRING);
-
-		pane.addHyperlinkListener(new HyperlinkListener() {
-			public void hyperlinkUpdate(HyperlinkEvent evt) {
-				// Mouse enters on the link
-				if (evt.getEventType() == HyperlinkEvent.EventType.ENTERED)
-					label.setText(LINK_OPEN_STRING + evt.getURL().toString());
-				// Mouse exits the link
-				if (evt.getEventType() == HyperlinkEvent.EventType.EXITED)
-					label.setText(LINK_DEFAULT_STRING);
-			}
-		});
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -75,7 +56,6 @@ public class MenuFrame extends JFrame {
 
 		JPanel contentPane = new JPanel(new BorderLayout());
 		contentPane.add(scrollPane, BorderLayout.CENTER);
-		contentPane.add(label, BorderLayout.SOUTH);
 		setContentPane(contentPane);
 	}
 

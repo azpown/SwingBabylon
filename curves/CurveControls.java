@@ -1,5 +1,7 @@
 package curves;
 
+import java.awt.Color;
+import java.awt.GridLayout;
 import java.awt.event.ItemEvent;
 import util.*;
 import java.awt.event.ItemListener;
@@ -10,6 +12,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 class CurveControls extends JPanel implements Observer{
 
@@ -38,14 +41,22 @@ class CurveControls extends JPanel implements Observer{
 		curveChooser = new FunChooser();
 		curveChooser.addObserver(this);
 		add(curveChooser.getPanel());
-		
+		this.setLayout(new GridLayout(3, 0,5,5));
+		this.setBackground(Color.decode("#c0392b"));
+		this.setBorder(new EmptyBorder(10,10, 15, 15) );
+
 		JPanel precision = new JPanel();
-		JLabel title = new JLabel("Précision");
+		JLabel title = new JLabel("Accuracy");
 		cb = new JComboBox<Integer>(nStepsChoices);
 
 		precision.add(title);
 		precision.add(cb);
 		add(precision);
+		
+		curveZoom.setBackground(Color.decode("#e74c3c"));
+		curveChooser.setBackground(Color.decode("#e74c3c"));
+		precision.setBackground(Color.decode("#e74c3c"));
+
 		
 		//Listener du widget de Précision [CP]
 		cb.addItemListener((ItemListener) (new ItemListener() {
