@@ -12,9 +12,6 @@ import function.FunVariations;
 import util.FramesController;
 
 public class CurveApplication implements FramesController{
-
-	private CurveApplication() {
-	}
 	
 	public final static String MENU_FILE = "Application";
 	public final static String MENU_ITEM_NEW = "New";
@@ -27,6 +24,8 @@ public class CurveApplication implements FramesController{
 	public final static String TITLE = "Curves";
 
 	private static final List<JFrame> frames = new ArrayList<JFrame>();
+	
+	private CurveApplication() {}
 	
 	public static void start() {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {

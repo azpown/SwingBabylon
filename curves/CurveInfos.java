@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 /**
  * 
@@ -36,7 +37,7 @@ class CurveInfos extends JPanel {
 		xmouse = new JLabel();
 		ymouse = new JLabel();
 		integral = new JLabel();
-
+		setBorder(new EmptyBorder(15,15, 15, 15) );
 		add(xmin);
 		add(xmax);
 		add(ymin);
