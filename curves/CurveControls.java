@@ -43,7 +43,7 @@ class CurveControls extends JPanel implements Observer{
 		add(curveChooser.getPanel());
 		this.setLayout(new GridLayout(3, 0,5,5));
 		this.setBackground(Color.decode("#c0392b"));
-		this.setBorder(new EmptyBorder(10,12, 10, 12) );
+		this.setBorder(new EmptyBorder(10,10, 15, 15) );
 
 		JPanel precision = new JPanel();
 		JLabel title = new JLabel("Accuracy");

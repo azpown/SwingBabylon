@@ -1,4 +1,5 @@
 import java.io.IOException;
+
 import curves.CurveApplication;
 import function.SyntaxErrorException;
 
